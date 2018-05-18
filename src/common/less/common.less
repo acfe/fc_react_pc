@@ -1,0 +1,78 @@
+@import "param.less";
+
+html,body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+* {
+    font-size: 24/@rem;
+    color: @black;
+}
+
+ul, li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#app {
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.clearFix {
+  *zoom: 1;
+}
+
+.hide {
+    display: none;
+}
+
+input, textarea {
+    -webkit-appearance: none;
+}
+
+.clearFix:after {
+  clear: both;
+  content: " ";
+  display: block;
+}
+
+.lineL:before, .lineR:before {
+    content: " ";
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleX(0.5);
+    transform: scaleX(0.5);
+    left: 0;
+    top: 0;
+    border-left: 1px solid @borderColor;
+}
+.lineR:before {
+    left: 100%;
+}
+.lineT:before, .lineB:before {
+    content: " ";
+    position: absolute;
+    height: 1px;
+    width: 100%;
+    -webkit-transform-origin: 0 0;
+    transform-origin: 0 0;
+    -webkit-transform: scaleY(0.5);
+    transform: scaleY(0.5);
+    left: 0;
+    top: 0;
+    border-top: 1px solid @borderColor;
+}
+.lineB:before {
+    top: 100%;
+}

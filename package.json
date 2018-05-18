@@ -1,0 +1,42 @@
+{
+  "name": "fc_react",
+  "version": "2.0.0",
+  "description": "fcbox with react",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/acfe/fc_react.git"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --config scripts/config/webpack-dev-server.config.js --progress --inline --colors --hot --mode development",
+    "build": "webpack --config scripts/config/webpack-production.config.js --progress --colors --mode production",
+    "watch": "webpack -w --config scripts/config/webpack-production.config.js --progress --colors --mode production"
+  },
+  "private": true,
+  "devDependencies": {},
+  "dependencies": {
+    "babel": "^6.23.0",
+    "babel-cli": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "css-loader": "^0.28.11",
+    "extract-text-webpack-plugin": "^4.0.0-beta.0",
+    "file-loader": "^1.1.11",
+    "less": "^3.0.1",
+    "less-loader": "^4.1.0",
+    "react": "^16.3.1",
+    "react-dom": "^16.3.1",
+    "react-redux": "^5.0.7",
+    "react-tap-event-plugin": "^3.0.2",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
+    "style-loader": "^0.20.3",
+    "transfer-webpack-plugin": "^0.1.4",
+    "url-loader": "^1.0.1",
+    "webpack": "^4.4.1",
+    "webpack-cli": "^2.0.13",
+    "webpack-dev-server": "^3.1.1",
+    "webpack-manifest-plugin": "^2.0.0-rc.2"
+  }
+}
