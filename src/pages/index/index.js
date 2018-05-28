@@ -14,7 +14,7 @@ const store = createStore(
 );
 
 // components
-import Router from 'fcbox/react/router/index';
+import Router from 'fcbox/react/static_router/index';
 import Index from 'src/pages/index/containers/index';
 import P1 from 'src/pages/index/components/p1';
 import P2 from 'src/pages/index/components/p2';
