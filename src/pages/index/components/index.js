@@ -10,12 +10,7 @@ class Index extends Component {
     componentDidMount() {
         const { state, page } = this.props;
         if(!state.pagesLoaded[page]) {
-            state.pagesLoaded[page] = true;
-            setTimeout(() => {
-                if(state.router.showPage == page) {
-                    this.refresh();
-                }
-            });
+            this.init();
         } else {
             this.refresh();
         }
@@ -28,6 +23,16 @@ class Index extends Component {
             return true;
         }
         return false;
+    }
+
+    init() {
+        const { state, page } = this.props;
+        state.pagesLoaded[page] = true;
+        setTimeout(() => {
+            if(state.router.showPage == page) {
+                this.refresh();
+            }
+        });
     }
 
     refresh() {
@@ -52,7 +57,6 @@ class Index extends Component {
                 </div>
             );
         }
-        console.log(state.pagesLocked[page])
         const dom = (
             <div>
                 <div>1</div>

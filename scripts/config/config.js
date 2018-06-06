@@ -27,8 +27,7 @@ const envPath = {
 
 //入口配置
 const pages = {
-    index: 'index',
-    demo: 'demo'
+    index: 'index'
 };
 const entry = {};
 for (let p in pages) {

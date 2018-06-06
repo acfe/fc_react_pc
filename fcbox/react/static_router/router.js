@@ -33,23 +33,14 @@ class Router extends Component {
     }
 
     go(path) {
-        if (!this.routeChildren || !this.routeChildren.length) {
-            return;
-        }
         location.href = '#/' + path;
     }
 
     push(path) {
-        if (!this.routeChildren || !this.routeChildren.length) {
-            return;
-        }
         location.href = '#/' + path;
     }
 
     back() {
-        if (!this.routeChildren || !this.routeChildren.length) {
-            return;
-        }
         history.go(-1);
     }
 
@@ -58,12 +49,16 @@ class Router extends Component {
             return false;
         }
         let showChild;
-        for(let i in this.routeChildren) {
-            if(this.routeChildren[i].props['page'] == this.showPage) {
-                showChild = this.routeChildren[i];
+        if(this.routeChildren && this.routeChildren.length) {
+            for(let i in this.routeChildren) {
+                if(this.routeChildren[i].props['page'] == this.showPage) {
+                    showChild = this.routeChildren[i];
+                }
             }
+            showChild = showChild || this.routeChildren[0];
+        } else {
+            showChild = this.routeChildren;
         }
-        showChild = showChild || this.routeChildren[0];
         return (
             <div ref="wrapper" className="wrapper">
                 <div className="wrapperContent">
