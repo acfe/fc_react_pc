@@ -5,7 +5,7 @@ const setData = (param) => {
         key: param.key,
         data: param.data
     }
-}
+};
 
 const setStaticData = (param) => {
     return {
@@ -13,13 +13,13 @@ const setStaticData = (param) => {
         key: param.key,
         data: param.data
     }
-}
+};
 
 const onRefresh = () => {
     return {
         type: 'refresh'
     }
-}
+};
 
 export {
     setData,

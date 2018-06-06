@@ -12,10 +12,10 @@ class Config {
 
     setApiUrl() {
         this.api = {
-            userInfo: '/user/ccb/userInfo',
+            userInfo: '/user/ccb/userInfo'
         };
         this.homePage = {
-            index: publicPath + 'index.html?show=index',
+            index: publicPath + 'index.html?show=index'
         };
     }
 
