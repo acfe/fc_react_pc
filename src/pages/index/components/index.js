@@ -42,40 +42,16 @@ class Index extends Component {
         });
     }
 
-    go() {
-        const { state, page } = this.props;
-        this.refresh();
-        state.router.push('index/p2');
-    }
-
     render() {
         const { state, page } = this.props;
         if (!state.pagesLoaded[page]) {
             return (
-                <div className="Index">
-                    loading...
-                </div>
+                <div className="fc-loading"></div>
             );
         }
-        const dom = (
-            <div>
-                <div>1</div>
-            </div>
-        );
-        const arr = [1, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3, 2, 3];
         return (
-            <div className="page Index" onClick={() => this.go()}>
+            <div className="index">
                 Index
-                {dom}
-                {
-                    arr.map((item, key) => {
-                        return (
-                            <div key={key}>
-                                <div>{item}</div>
-                            </div>
-                        )
-                    })
-                }
             </div>
         );
     }

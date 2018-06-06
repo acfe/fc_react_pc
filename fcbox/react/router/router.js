@@ -196,7 +196,7 @@ class Router extends Component {
         if (!this.routeChildren.length) {
             this.showPage = this.routeChildren.props['page'] || 'index';
             return (
-                <div className="wrapperPage">
+                <div className="wrapper-page">
                     {this.routeChildren}
                 </div>
             );
@@ -206,7 +206,7 @@ class Router extends Component {
             const ref = item.props['page'] || 'page' + (key + 1);
             this.keyArr[ref] = this.keyArr[ref] || Math.random();
             return (
-                <div ref={ref} key={this.keyArr[ref]} className="wrapperPage">
+                <div ref={ref} key={this.keyArr[ref]} className="wrapper-page">
                     {item}
                 </div>
             );
@@ -216,7 +216,7 @@ class Router extends Component {
     render() {
         return (
             <div ref="wrapper" className="wrapper">
-                <div className="wrapperContent">
+                <div className="wrapper-content">
                     {this.showChildren()}
                 </div>
             </div>

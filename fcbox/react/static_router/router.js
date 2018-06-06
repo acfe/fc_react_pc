@@ -61,7 +61,7 @@ class Router extends Component {
         }
         return (
             <div ref="wrapper" className="wrapper">
-                <div className="wrapperContent">
+                <div className="wrapper-content">
                     {showChild}
                 </div>
             </div>
