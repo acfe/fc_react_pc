@@ -14,14 +14,18 @@ const store = createStore(
 );
 
 // components
-import Router from 'fcbox/react/static_router/index';
-import Index from 'src/pages/index/containers/index';
+import Router from 'fcbox/react/static_router';
+import Loading from 'fcbox/react/public/loading';
+import Index from 'src/pages/index/containers';
 
 render(
     <Provider store={store}>
-        <Router>
-            <Index path="index" page="index"/>
-        </Router>
+        <div className="app">
+            <Router>
+                <Index path="index" page="index"/>
+            </Router>
+            <Loading/>
+        </div>
     </Provider>,
     document.getElementById('app')
 );
