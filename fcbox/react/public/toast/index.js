@@ -45,13 +45,13 @@ class Toast extends Component {
     renderContent() {
         if(this.state.theme == 'white') {
             return (
-                <div className="fc-toast-white fc-shadow">
+                <div className="fc-toast-white fc-pop-shadow">
                     <span className="fc-toast-text">{this.state.text}</span>
                 </div>
             );
         }
         return (
-            <div className="fc-toast-black fc-shadow">
+            <div className="fc-toast-black fc-pop-shadow">
                 <span className="fc-toast-text">{this.state.text}</span>
             </div>
         );

@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import "src/pages/index/less/index.less";
+import Button from 'fcbox/react/public/button';
 
 class Index extends Component {
 
@@ -50,8 +51,17 @@ class Index extends Component {
             );
         }
         return (
-            <div className="index" onClick={() => {fc.Toast.show({text: 'i am a toast'})}}>
-                Index
+            <div className="index">
+                {/*<div onClick={() => {fc.Toast.show({text: 'i am a toast'})}}>toast</div>*/}
+                <div className="button-bk">
+                    <Button param={{text: '文本', style: 'text'}}/>
+                </div>
+                <div className="button-bk">
+                    <Button param={{text: '边框', style: 'border'}}/>
+                </div>
+                <div className="button-bk">
+                    <Button param={{text: '默认'}}/>
+                </div>
             </div>
         );
     }
