@@ -50,7 +50,7 @@ class Index extends Component {
             );
         }
         return (
-            <div className="index" onClick={() => {fc.Loading.show()}}>
+            <div className="index" onClick={() => {fc.Toast.show({text: 'i am a toast'})}}>
                 Index
             </div>
         );
