@@ -1,5 +1,5 @@
 @import '../less/color';
-
+/*common*/
 .fc-button {
     position: relative;
     padding: 8px 16px;
@@ -9,8 +9,16 @@
     border-radius: 4px;
     text-align: center;
     user-select: none;
+    .fc-button-text {
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        pointer-events: none;
+        color: inherit;
+        font-size: 14px;
+    }
 }
-
+/*tap*/
 .fc-button-tap {
     position: absolute;
     overflow: hidden;
@@ -22,17 +30,62 @@
     height: 100%;
     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
 }
-
 .fc-button-tap:hover {
     background-color: rgba(0, 0, 0, 0.05);
 }
-
+/*border*/
 .fc-button-border-style {
     border: 1px solid rgba(0, 0, 0, 0.23);
 }
-
-.fc-button-content-style {
+/*default*/
+.fc-button-default-style {
     color: rgba(0, 0, 0, 0.87);
     box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 3px 1px -2px rgba(0, 0, 0, 0.12);
     background-color:@white;
+}
+/*---theme---*/
+/*blue*/
+.fc-button-text-blue {
+    color: @blue;
+}
+.fc-button-tap-text-blue:hover {
+    background-color: rgba(187, 222, 251, 0.3);
+}
+.fc-button-border-blue {
+    color: @blue;
+}
+.fc-button-tap-border-blue:hover {
+    background-color: rgba(187, 222, 251, 0.3);
+}
+.fc-button-default-blue {
+    color: @white;
+    background-color: @blue;
+}
+.fc-button-tap-default-blue:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+/*green*/
+.fc-button-text-green {
+    color: @green;
+}
+.fc-button-tap-text-green:hover {
+    background-color: rgba(76, 175, 80, 0.3);
+}
+.fc-button-border-green {
+    color: @green;
+}
+.fc-button-tap-border-blue:hover {
+    background-color: rgba(76, 175, 80, 0.3);
+}
+.fc-button-default-green {
+    color: @white;
+    background-color: @green;
+}
+.fc-button-tap-default-green:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+/*disabled*/
+.fc-button-disabled {
+    color: rgba(0, 0, 0, 0.26);
+    background-color: rgba(0, 0, 0, 0.05);
 }

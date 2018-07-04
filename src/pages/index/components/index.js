@@ -53,14 +53,49 @@ class Index extends Component {
         return (
             <div className="index">
                 {/*<div onClick={() => {fc.Toast.show({text: 'i am a toast'})}}>toast</div>*/}
-                <div className="button-bk">
-                    <Button param={{text: '文本', style: 'text'}}/>
+                <div>
+                    <div className="button-bk">
+                        <Button param={{text: '文本', style: 'text'}}/>
+                    </div>
+                    <div className="button-bk">
+                        <Button param={{text: '边框', style: 'border'}}/>
+                    </div>
+                    <div className="button-bk">
+                        <Button param={{text: '默认'}}/>
+                    </div>
                 </div>
-                <div className="button-bk">
-                    <Button param={{text: '边框', style: 'border'}}/>
+                <div>
+                    <div className="button-bk">
+                        <Button param={{text: 'disabled', style: 'text', disabled: true}}/>
+                    </div>
+                    <div className="button-bk">
+                        <Button param={{text: 'disabled', style: 'border', disabled: true}}/>
+                    </div>
+                    <div className="button-bk">
+                        <Button param={{text: 'disabled', disabled: true}}/>
+                    </div>
                 </div>
-                <div className="button-bk">
-                    <Button param={{text: '默认'}}/>
+                <div>
+                    <div className="button-bk">
+                        <Button param={{text: 'blue', style: 'text', theme: 'blue'}}/>
+                    </div>
+                    <div className="button-bk">
+                        <Button param={{text: 'blue', style: 'border', theme: 'blue'}}/>
+                    </div>
+                    <div className="button-bk">
+                        <Button param={{text: 'blue', theme: 'blue'}}/>
+                    </div>
+                </div>
+                <div>
+                    <div className="button-bk">
+                        <Button param={{text: 'green', style: 'text', theme: 'green'}}/>
+                    </div>
+                    <div className="button-bk">
+                        <Button param={{text: 'green', style: 'border', theme: 'green'}}/>
+                    </div>
+                    <div className="button-bk">
+                        <Button param={{text: 'green', theme: 'green'}}/>
+                    </div>
                 </div>
             </div>
         );
