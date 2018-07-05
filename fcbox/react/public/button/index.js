@@ -20,15 +20,17 @@ class Button extends Component {
     }
 
     tap(e) {
-        console.log(e.layerX);
+        //console.log(e.layerX);
+        const { param } = this.props;
+        param.callback && param.callback();
     }
 
     render() {
         const { param } = this.props;
         let className = "fc-button";
         let tapClassName = 'fc-button-tap';
-        param.style = param.style || 'default';
-        switch(param.style) {
+        param.type = param.type || 'default';
+        switch(param.type) {
             case 'default':
                 className += ' fc-button-default-style';
                 break;
@@ -37,38 +39,46 @@ class Button extends Component {
                 break;
         }
         /*themeInit*/
-        let themeClassNames = {
-            blue: {
+        let themes = [
+            'blue',
+            'lightBlue',
+            'cyan',
+            'teal',
+            'green',
+            'lightGreen',
+            'lime',
+            'red',
+            'pink',
+            'purple',
+            'deepPurple',
+            'indigo',
+            'yellow',
+            'amber',
+            'orange',
+            'deepOrange',
+            'brown',
+            'grey',
+            'blueGrey'
+        ];
+        let themeClassNames = {};
+        themes.map((item) => {
+            themeClassNames[item] = {
                 text: {
-                    className: 'fc-button-text-blue',
-                    tapClassName: 'fc-button-tap-text-blue'
+                    className: 'fc-button-text-' + item,
+                    tapClassName: 'fc-button-tap-text-' + item
                 },
                 border: {
-                    className: 'fc-button-border-blue',
-                    tapClassName: 'fc-button-tap-border-blue'
+                    className: 'fc-button-border-' + item,
+                    tapClassName: 'fc-button-tap-border-' + item
                 },
                 default: {
-                    className: 'fc-button-default-blue',
-                    tapClassName: 'fc-button-tap-default-blue'
+                    className: 'fc-button-default-' + item,
+                    tapClassName: 'fc-button-tap-default-' + item
                 }
-            },
-            green: {
-                text: {
-                    className: 'fc-button-text-green',
-                    tapClassName: 'fc-button-tap-text-green'
-                },
-                border: {
-                    className: 'fc-button-border-green',
-                    tapClassName: 'fc-button-tap-border-green'
-                },
-                default: {
-                    className: 'fc-button-default-green',
-                    tapClassName: 'fc-button-tap-default-green'
-                }
-            }
-        };
-        if(themeClassNames[param.theme] && themeClassNames[param.theme][param.style]) {
-            let themeClass = themeClassNames[param.theme][param.style];
+            };
+        });
+        if(themeClassNames[param.theme] && themeClassNames[param.theme][param.type]) {
+            let themeClass = themeClassNames[param.theme][param.type];
             if(themeClass.className) {
                 className += ' ' + themeClass.className;
             }
@@ -76,17 +86,20 @@ class Button extends Component {
                 tapClassName += ' ' + themeClass.tapClassName;
             }
         }
+        let style = param.style || {};
+        let textStyle = param.textStyle || {};
+        let tapStyle = param.tapStyle || {};
         /*tapInit*/
         let buttonTap;
         if(!param.disabled) {
-            buttonTap = <div ref="button" className={tapClassName}></div>;
+            buttonTap = <div ref="button" className={tapClassName} style={tapStyle}></div>;
         } else {
             className += ' fc-button-disabled';
         }
         return (
-            <div className={className}>
+            <div className={className} style={style}>
                 {buttonTap}
-                <div className="fc-button-text">{param.text}</div>
+                <div className="fc-button-text" style={textStyle}>{param.text}</div>
             </div>
         );
     }
