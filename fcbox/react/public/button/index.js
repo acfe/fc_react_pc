@@ -86,6 +86,7 @@ class Button extends Component {
                 tapClassName += ' ' + themeClass.tapClassName;
             }
         }
+        /*styleInit*/
         let style = param.style || {};
         let textStyle = param.textStyle || {};
         let tapStyle = param.tapStyle || {};

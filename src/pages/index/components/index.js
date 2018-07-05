@@ -70,6 +70,9 @@ class Index extends Component {
             'grey',
             'blueGrey'
         ];
+        let template = (data) => {
+            return <div>{data.text}</div>;
+        };
         return (
             <div className="index">
                 {/*<div onClick={() => {fc.Toast.show({text: 'i am a toast'})}}>toast</div>*/}
@@ -108,7 +111,7 @@ class Index extends Component {
                         />
                     </div>
                     <div className="button-bk">
-                        <Button param={{text: '默认'}}/>
+                        <Button param={{text: '默认', template: template}}></Button>
                     </div>
                 </div>
                 <div>
