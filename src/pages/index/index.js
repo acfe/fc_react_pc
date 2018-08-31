@@ -17,13 +17,13 @@ const store = createStore(
 import Router from 'fcbox/react/static_router';
 import Loading from 'fcbox/react/public/loading';
 import Toast from 'fcbox/react/public/toast';
-import Index from 'src/pages/index/containers';
+import ButtonsIndex from 'src/pages/index/containers';
 
 render(
     <Provider store={store}>
         <div className="app">
             <Router>
-                <Index path="index" page="index"/>
+                <ButtonsIndex path="index" page="index"/>
             </Router>
             <Toast/>
             <Loading/>

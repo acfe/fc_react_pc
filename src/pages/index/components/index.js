@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import "src/pages/index/less/index.less";
 import Button from 'fcbox/react/public/button';
 
-class Index extends Component {
+class ButtonsIndex extends Component {
 
     constructor(props, context) {
         super(props, context);
@@ -157,4 +157,4 @@ class Index extends Component {
 
 }
 
-export default Index;
+export default ButtonsIndex;
